@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+#include<iomanip>
+//note : in linear search don't need of sorted array 
+void linear_search(int a[],int n,int k){
+    bool flag = false;
+    for (int i = 0; i < n; i++)
+    {
+        if(a[i]==k){
+            flag = true;
+        }
+    }
+    cout<<"result is : "<<flag<<endl;
+}
+int main(){
+    int n,k;
+    cout<<"enter the number of element : "<<endl;
+    cin>>n;
+    int a[n];
+    for(int i=0 ;i<n;i++){
+        cin>>a[i];
+    }
+
+    cout<<"enter the key : "<<endl;
+    cin>>k;
+    linear_search(a,n,k);
+    return 0 ;
+}
