@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+#include <iomanip>
+void binary_search(int a[], int n, int k) //sorted array is consider to it
+//time complexity wc : o(log n ) bc: o(1)
+{
+    int mid;
+    int s = 0;
+    int e = n;
+    bool flag = false;
+    while (s <= e)
+    {
+        mid = (s + e) / 2;
+        if (a[mid] == k)
+        {
+            flag = true;
+            break;
+        }
+        else if (a[mid] > k)
+        {
+            e = mid - 1;
+        }
+        else
+        {
+            
+            s = mid + 1;
+        }
+    }
+    cout << "result is : " << flag << endl;
+}
+int main()
+{
+    int n, k;
+    cout << "enter the number of element : " << endl;
+    cin >> n;
+    int a[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+
+    cout << "enter the key : " << endl;
+    cin >> k;
+    binary_search(a, n, k);
+    return 0;
+}
